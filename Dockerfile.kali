@@ -1,0 +1,10 @@
+FROM kalilinux/kali-rolling
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt -y full-upgrade && \
+    apt -y install \
+      kali-linux-default kali-tools-top10 \
+      metasploit-framework \
+      tor proxychains4 torsocks macchanger \
+      net-tools iproute2 iputils-ping dnsutils tcpdump whois \
+      git python3-pip python3-venv golang
+WORKDIR /work
